@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Home</title>
+</head>
+<body onload="startTime()">
+    <div id="calendar">
+        <div id="background">
+
+        </div>
+        <div id="fechar" onclick="closeCalendar()">
+            <p>X</p>
+        </div>
+        <div class="container-calendar">
+            <div class="card">
+              <div class="front">
+                <div class="contentfront">
+                  <div class="month">
+                    <table>
+                      <tr class="orangeTr">
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                        <th>S</th>
+                      </tr>
+                      <tr class="whiteTr">
+                        <th></th>
+                        <th id="number1" onclick="apertar(1)">1</th>
+                        <th id="number2" onclick="apertar(2)">2</th>
+                        <th id="number3" onclick="apertar(3)">3</th>
+                        <th id="number4" onclick="apertar(4)">4</th>
+                        <th id="number5" onclick="apertar(5)">5</th>
+                        <th id="number6" onclick="apertar(6)">6</th>
+                      </tr>
+                      <tr class="whiteTr">
+                        <th id="number7" onclick="apertar(7)">7</th>
+                        <th id="number8" onclick="apertar(8)">8</th>
+                        <th id="number9" onclick="apertar(9)">9</th>
+                        <th id="number10" onclick="apertar(10)">10</th>
+                        <th id="number11" onclick="apertar(11)">11</th>
+                        <th id="number12" onclick="apertar(12)">12</th>
+                        <th id="number13" onclick="apertar(13)">13</th>
+                      </tr>
+                      <tr class="whiteTr">
+                        <th id="number14" onclick="apertar(14)">14</th>
+                        <th id="number15" onclick="apertar(15)">15</th>
+                        <th id="number16" onclick="apertar(16)">16</th>
+                        <th id="number17" onclick="apertar(17)">17</th>
+                        <th id="number18" onclick="apertar(18)">18</th>
+                        <th id="number19" onclick="apertar(19)">19</th>
+                        <th id="number20" onclick="apertar(20)">20</th>
+                      </tr>
+                      <tr class="whiteTr">
+                        <th id="number21" onclick="apertar(21)">21</th>
+                        <th id="number22" onclick="apertar(22)">22</th>
+                        <th id="number23" onclick="apertar(23)">23</th>
+                        <th id="number24" onclick="apertar(24)">24</th>
+                        <th id="number25" onclick="apertar(25)">25</th>
+                        <th id="number26" onclick="apertar(26)">26</th>
+                        <th id="number27" onclick="apertar(27)">27</th>
+                      </tr>
+                      <tr class="whiteTr">
+                        <th id="number28" onclick="apertar(28)">28</th>
+                        <th id="number29" onclick="apertar(29)">29</th>
+                        <th id="number30" onclick="apertar(30)">30</th>
+                        <th id="number31" onclick="apertar(31)">31</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="date">
+                    <div class="datecont">
+                      <div id="date"></div>
+                      <div id="day"></div>
+                      <div id="month"></div>
+                      <i class="fa fa-pencil edit" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="back">
+                <div class="contentback">
+                  <div class="backcontainer">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <nav id="nav">
+        <div class="carousel" id="carousel">
+            <div class="slides">
+                <script>
+                    var count = 1;
+
+                    setInterval(function(){
+                        count++;
+                        if(count == 4){
+                            count = 1;
+                        }
+                        document.querySelector('#slide' + count).checked = true;
+                    }, 5000);
+                </script>
+                <input type="radio" name="slide" id="slide1" checked>
+                <input type="radio" name="slide" id="slide2">
+                <input type="radio" name="slide" id="slide3">
+                <input type="radio" name="slide" id="slide4">
+    
+                <div class="slide s1" onmouseover="on()" onmouseout="off()">
+                    <div class="color" style="background-color: rgb(255, 79, 79)"></div>
+                </div>
+                <div class="slide">
+                    <div class="color" style="background-color: rgb(230, 42, 42)"></div>
+                </div>
+                <div class="slide">
+                    <div class="color" style="background-color: rgb(177, 50, 50)"></div>
+                </div>
+                <div class="slide">
+                    <div class="color" style="background-color: rgb(129, 12, 12)"></div>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="menu">
+                <div class="logo">
+                    <img src="" alt="logo">
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="container">
+            <div class="navigation-slide">
+                <label class="bar-slide" id="bar-slide" for="slide1"></label>
+                <label class="bar-slide" id="bar-slide" for="slide2"></label>
+                <label class="bar-slide" id="bar-slide" for="slide3"></label>
+                <label class="bar-slide" id="bar-slide" for="slide4"></label>
+            </div>
+            <div class="content-esq">
+                <div class="content">
+                    <h1>Title</h1>
+                    <p>Venha marcar o seu horario conosco</p>
+                    <button onclick="openCalendar()">Agendar</button>
+                </div>
+            </div>
+            <div class="content-dir"></div>
+        </div>
+    </nav>
+</body>
+</html>
