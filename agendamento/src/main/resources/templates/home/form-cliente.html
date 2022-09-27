@@ -10,26 +10,119 @@
     <link href="/css/style.css" rel="stylesheet">
     <title>Cadastro Cliente</title>
 </head>
-<body>
-    <div id="form-cliente" style="display:flex;position:absolute;width: 100vw;height: 100vh;background-color: rgba(0, 0, 0, 0.911);z-index: 4;justify-content: center;align-items: center;flex-direction: column;">
-      <form style="width: 50vw;height: 60vh;background-color: white;border-radius: 10px;display:flex;justify-content:center;flex-direction:column;align-items:center;" action="/home/cadastrar" method="post">
-        <div class="form-group" style="display: flex;justify-content:center;flex-direction:column;margin:10px;">
-          <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" placeholder="Nome" autocomplete="off">
+<body onload="startTime()">
+  <div id="form-calendar" class="form-content" style="display:none;z-index:5;">
+    <span onclick="close_calendar()" style="position:absolute;right:0px;top:0px;color:white;cursor:pointer;margin:10px">X</span>
+    <div id="calendar">
+        <div class="container-calendar">
+            <div class="card">
+            <div class="front">
+                <div class="contentfront">
+                <div class="month">
+                    <table>
+                    <tr class="orangeTr">
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                        <th>S</th>
+                    </tr>
+                    <tr class="whiteTr">
+                        <th></th>
+                        <th id="number1" onclick="apertar(1)">1</th>
+                        <th id="number2" onclick="apertar(2)">2</th>
+                        <th id="number3" onclick="apertar(3)">3</th>
+                        <th id="number4" onclick="apertar(4)">4</th>
+                        <th id="number5" onclick="apertar(5)">5</th>
+                        <th id="number6" onclick="apertar(6)">6</th>
+                    </tr>
+                    <tr class="whiteTr">
+                        <th id="number7" onclick="apertar(7)">7</th>
+                        <th id="number8" onclick="apertar(8)">8</th>
+                        <th id="number9" onclick="apertar(9)">9</th>
+                        <th id="number10" onclick="apertar(10)">10</th>
+                        <th id="number11" onclick="apertar(11)">11</th>
+                        <th id="number12" onclick="apertar(12)">12</th>
+                        <th id="number13" onclick="apertar(13)">13</th>
+                    </tr>
+                    <tr class="whiteTr">
+                        <th id="number14" onclick="apertar(14)">14</th>
+                        <th id="number15" onclick="apertar(15)">15</th>
+                        <th id="number16" onclick="apertar(16)">16</th>
+                        <th id="number17" onclick="apertar(17)">17</th>
+                        <th id="number18" onclick="apertar(18)">18</th>
+                        <th id="number19" onclick="apertar(19)">19</th>
+                        <th id="number20" onclick="apertar(20)">20</th>
+                    </tr>
+                    <tr class="whiteTr">
+                        <th id="number21" onclick="apertar(21)">21</th>
+                        <th id="number22" onclick="apertar(22)">22</th>
+                        <th id="number23" onclick="apertar(23)">23</th>
+                        <th id="number24" onclick="apertar(24)">24</th>
+                        <th id="number25" onclick="apertar(25)">25</th>
+                        <th id="number26" onclick="apertar(26)">26</th>
+                        <th id="number27" onclick="apertar(27)">27</th>
+                    </tr>
+                    <tr class="whiteTr">
+                        <th id="number28" onclick="apertar(28)">28</th>
+                        <th id="number29" onclick="apertar(29)">29</th>
+                        <th id="number30" onclick="apertar(30)">30</th>
+                        <th id="number31" onclick="apertar(31)">31</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </table>
+                </div>
+                <div class="date">
+                    <div class="datecont">
+                      <div id="date"></div>
+                      <div id="day"></div>
+                      <div id="month"></div>
+                      <i class="fa fa-pencil edit" aria-hidden="true"></i>
+                      <button id="button-open" onclick="close_calendar()" style="display:none;">Enviar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="contentback">
+                  <div class="backcontainer">
+                  </div>
+                </div>
+            </div>
+            </div>
         </div>
-        <div class="form-group" style="display: flex;justify-content:center;flex-direction:column;margin:10px;">
-          <label for="telefone">Telefone</label>
-          <input type="text" name="telefone" id="telefone" placeholder="Telefone" autocomplete="off">
-        </div>
-        <div class="form-group" style="display: flex;justify-content:center;flex-direction:column;margin:10px;">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" placeholder="Email" autocomplete="off">
-        </div>
-        <div class="form-group" style="display: flex;justify-content:center;flex-direction:column;margin:10px;">
-          <button type="submit">Salvar</button>
-        </div>
-      </form>
     </div>
-    <script src="/js/main.js"></script>
+  </div>
+  <div id="form-cliente" style="display:flex;position:absolute;width: 100vw;height: 100vh;background-color: rgba(0, 0, 0, 0.911);z-index: 4;justify-content: center;align-items: center;flex-direction: column;">
+    <form class="form-cliente" style="height: 60vh;background-color: #232227;border-radius: 10px;display:flex;justify-content:center;flex-direction:column;align-items:center;padding:70px" action="/home/cadastrar" method="post">
+      <div class="omrs-input-group">
+        <label class="omrs-input-underlined">
+          <input name="nome" required autocomplete="off">
+          <span class="omrs-input-label">Nome</span>
+        </label>
+      </div>
+      <div class="omrs-input-group">
+        <label class="omrs-input-underlined">
+          <input name="telefone" required autocomplete="off">
+          <span class="omrs-input-label">Telefone</span>
+        </label>
+      </div>
+      <div class="omrs-input-group">
+        <label class="omrs-input-underlined">
+          <input name="email" required autocomplete="off">
+          <span class="omrs-input-label">E-mail</span>
+        </label>
+      </div>
+      <input type="text" class="data_agendamento" name="data" id="data_agendamento" style="border:none;text-align:center;cursor:pointer;color:cornflowerblue;background:transparent;" placeholder="Selecionar data" onclick="open_calendar()" required>  
+      <div class="form-group" style="display: flex;justify-content:center;flex-direction:column;margin:10px;">
+        <button type="submit" class="button">Salvar</button>
+      </div>
+    </form>
+  </div>
+  <script src="/js/main.js"></script>
 </body>
 </html>

@@ -85,6 +85,8 @@ function apertar(number){
     date = number + "/" + mt + "/" + y;
     console.log(date);
     checar(number)
+    document.getElementById('button-open').style.display = "";
+    document.getElementById('data_agendamento').type = "text";
     document.getElementById('data_agendamento').value = date;
 }
 
@@ -98,4 +100,12 @@ function close(id){
                         
     document.getElementById(id).style.display = "none";
     
+}
+
+function open_calendar(){
+    document.getElementById('form-calendar').style.display = "flex";
+}
+
+function close_calendar(){
+    document.getElementById('form-calendar').style.display = "none";
 }

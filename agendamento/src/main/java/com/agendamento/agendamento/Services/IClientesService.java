@@ -1,6 +1,5 @@
 package com.agendamento.agendamento.Services;
 
-import java.util.Optional;
 import com.agendamento.agendamento.Models.Clientes;
 
 public interface IClientesService {
