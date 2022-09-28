@@ -26,6 +26,10 @@ public class ClienteService implements IClientesService {
 
     @Override
     public Clientes toDelete(Clientes cliente) {
+        if (cliente != null){
+            dao.delete(cliente);
+            return cliente;
+        }
         return null;
     }
 

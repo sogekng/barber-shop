@@ -28,12 +28,18 @@ public class VagasService implements IVagasService {
     }
 
     @Override
-    public Vagas toUpdate(Vagas vagas) {
-        return null;
+    public void toUpdate(Integer id_vaga, String number) {
+        if (dao.existsById(id_vaga)){
+            dao.updateNumber(id_vaga, number);
+        }
     }
 
     @Override
     public Vagas toDelete(Vagas vagas) {
+        if (vagas != null){
+            dao.delete(vagas);
+            return vagas;
+        }
         return null;
     }
 
@@ -55,5 +61,15 @@ public class VagasService implements IVagasService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toSearchVaga(String data){
+        return dao.findByData(data);
+    }
+
+    @Override
+    public Integer toSearchIdVaga(String data) {
+        return dao.existsByIdVaga(data);
     }
 }

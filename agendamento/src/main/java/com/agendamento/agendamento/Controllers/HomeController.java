@@ -57,10 +57,18 @@ public class HomeController {
                 return "redirect:/home";
             }
     
-            serviceAgendamento.toCreate(agendamento);
-
-            model.addAttribute("accert", "Agendamento realizado com sucesso");
-            return "redirect:/home";
+            String vaga = serviceVagas.toSearchVaga(data);
+            if(Integer.parseInt(vaga) > 0){
+                Integer idVaga = serviceVagas.toSearchIdVaga(data);
+                serviceVagas.toUpdate(idVaga, String.valueOf(Integer.parseInt(vaga) - 1));
+                serviceAgendamento.toCreate(agendamento);
+                model.addAttribute("accert", "Agendamento realizado com sucesso");
+                return "redirect:/home";
+            }else{
+                serviceCliente.toDelete(cliente);
+                model.addAttribute("error", "Não existem mais vagas");
+                return "redirect:/home";
+            }
         }
     }
 

@@ -7,7 +7,7 @@ nav{
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background-color: cornflowerblue;
+    background-color: #E76642;
 }
 
 header{
@@ -302,7 +302,7 @@ margin-left: -42.85714285714286%;
     background-color:#E76642;
     border-radius:0 6px 6px 0;
     text-align:right;
-    padding:10px 30px;
+    padding:10px 20px;
     box-sizing:border-box;
     transform-style:preserve-3d;
     -webkit-transform-style:preserve-3d;
@@ -513,7 +513,7 @@ h4.title {
 	--omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
 	--omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
 	--omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
-	--omrs-color-interaction: #1e4bd1;
+	--omrs-color-interaction: #E76642;
 	--omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
 	--omrs-color-danger: #b50706;
 	--omrs-color-bg-low-contrast: #eff1f2;
@@ -656,16 +656,16 @@ div.omrs-input-group {
 }
 
 .data_agendamento{
-    width:9vw;
-    height:2vh;
-    font-size: 1rem;
+    width: 20vw;
+    height: 6vh;
+    font-size: 1.5rem;
 }
 
 .button{
     width: 10vw;
     height: 5vh;
     font-size: 1rem;
-    background-color: #1e4bd1;
+    background-color: #E76642;
     color: white;
     border: none;
     border-radius: 5px;
@@ -675,6 +675,14 @@ div.omrs-input-group {
 .sp{
     top:0;
     left:0;
+}
+
+.clos{
+    color: white;
+}
+
+.clos:hover{
+    color: #E76642;
 }
 
 @media screen and (max-width: 600px){
@@ -739,5 +747,9 @@ div.omrs-input-group {
 
     .btn{
         width: 20vw;
+    }
+
+    .button {
+        width: 30vw;
     }
 }
